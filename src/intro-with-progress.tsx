@@ -6,32 +6,15 @@
 
 import { assertIfTrue, mergeClasses } from "@sudoo/jss";
 import * as React from "react";
-import { IntroLogoComponentProps } from "./declare";
+import { IntroLogoComponentProps, IntroProps, IntroStates } from "./declare";
 import { IntroWithProgressStyle } from "./style/intro-with-progress";
 
 export type IntroWithProgressProps = {
+} & IntroProps;
 
-    readonly className?: string;
-    readonly color?: string;
-    readonly style?: React.CSSProperties;
-    readonly zIndex?: number;
-    readonly size?: number;
+export class IntroWithProgress extends React.Component<IntroWithProgressProps, IntroStates> {
 
-    readonly logo: React.ReactElement<IntroLogoComponentProps>;
-    readonly header: string;
-    readonly body: string;
-};
-
-export type IntroWithProgressStates = {
-
-    readonly playing: boolean;
-    readonly ready: boolean;
-    readonly covering: boolean;
-};
-
-export class IntroWithProgress extends React.Component<IntroWithProgressProps, IntroWithProgressStates> {
-
-    public readonly state: IntroWithProgressStates = {
+    public readonly state: IntroStates = {
 
         playing: false,
         ready: false,
