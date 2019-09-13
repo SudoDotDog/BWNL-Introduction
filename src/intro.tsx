@@ -12,6 +12,7 @@ import { IntroStyle } from "./style/intro";
 export type IntroProps = {
 
     readonly className?: string;
+    readonly color?: string;
     readonly style?: React.CSSProperties;
     readonly zIndex?: number;
     readonly size?: number;
@@ -125,15 +126,20 @@ export class Intro extends React.Component<IntroProps, IntroStates> {
         const fontSize: number = Math.floor(size / 3.6);
         const marginSize: number = Math.floor(size / 2.5);
 
+        const color: string = this.props.color || '000000';
+
         if (this.state.playing) {
             return {
                 fontSize: `${fontSize}px`,
+                color,
+                marginLeft: 0,
                 opacity: 1,
             };
         }
 
         return {
             fontSize: `${fontSize}px`,
+            color,
             marginLeft: `-${marginSize}px`,
             opacity: 0,
         };
