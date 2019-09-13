@@ -13,6 +13,7 @@ export type IntroProps = {
     readonly className?: string;
     readonly style?: React.CSSProperties;
     readonly zIndex?: number;
+    readonly size?: number;
 
     readonly logo: React.ReactElement<IntroLogoComponentProps>;
     readonly header: string;
@@ -40,6 +41,10 @@ export class Intro extends React.Component<IntroProps, IntroStates> {
 
     public render() {
 
+        const size: number = this.props.size || 100;
+        const fontSize: number = Math.floor(size / 3.6);
+        const gapSize: number = Math.floor(size / 5);
+
         const logo: React.ReactElement = React.cloneElement(this.props.logo, {
             forwarding: false,
             reversing: false,
@@ -52,14 +57,37 @@ export class Intro extends React.Component<IntroProps, IntroStates> {
                     zIndex: this.props.zIndex || 30,
                 }}
             >
-                <div className={this._introStyle.intro}>
-                    <div className={this._introStyle.icon}>
+                <div
+                    className={this._introStyle.intro}
+                    style={{
+                        columnGap: `${gapSize}px`,
+                    }}
+                >
+                    <div
+                        className={this._introStyle.icon}
+                        style={{
+                            height: `${size}px`,
+                        }}
+                    >
                         {logo}
                     </div>
-                    <div className={this._introStyle.header}>
+                    <div
+                        className={this._introStyle.progress}
+                    />
+                    <div
+                        className={this._introStyle.header}
+                        style={{
+                            fontSize: `${fontSize}px`,
+                        }}
+                    >
                         {this.props.header}
                     </div>
-                    <div className={this._introStyle.body}>
+                    <div
+                        className={this._introStyle.body}
+                        style={{
+                            fontSize: `${fontSize}px`,
+                        }}
+                    >
                         {this.props.body}
                     </div>
                 </div>

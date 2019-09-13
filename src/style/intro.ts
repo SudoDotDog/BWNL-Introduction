@@ -23,17 +23,31 @@ const IntroStyleBase: JSSStyle = {
         display: 'grid',
         gridTemplateAreas: `
             "icon header"
+            "icon progress"
             "icon body"
         `,
+        gridTemplateRows: `1fr auto 1fr`,
+        gridTemplateColumns: `auto 1fr`,
+        rowGap: '2px',
     },
     icon: {
         gridArea: 'icon',
+        alignSelf: 'center',
+    },
+    progress: {
+        gridArea: 'progress',
+        marginTop: '2px',
+        height: '3px',
     },
     header: {
         gridArea: 'header',
+        alignSelf: 'end',
+        lineHeight: '1em',
     },
     body: {
         gridArea: 'body',
+        alignSelf: 'start',
+        lineHeight: '1em',
     },
 };
 
