@@ -10,6 +10,9 @@ import { IntroLogoComponentProps, IntroProps, IntroStates } from "./declare";
 import { IntroWithProgressStyle } from "./style/intro-with-progress";
 
 export type IntroWithProgressProps = {
+
+    readonly progress: number;
+    readonly color: string;
 } & IntroProps;
 
 export class IntroWithProgress extends React.Component<IntroWithProgressProps, IntroStates> {
@@ -33,10 +36,10 @@ export class IntroWithProgress extends React.Component<IntroWithProgressProps, I
         setTimeout(() => this.setState({
             playing: true,
         }, () => setTimeout(() => this.setState({
-            playing: false,
-            ready: true,
+            // playing: false,
+            // ready: true,
         }, () => setTimeout(() => this.setState({
-            covering: false,
+            // covering: false,
         }), 300)), 2000)), 100);
     }
 
@@ -76,7 +79,13 @@ export class IntroWithProgress extends React.Component<IntroWithProgressProps, I
                     </div>
                     <div
                         className={this._introStyle.progress}
-                    />
+                    >
+                        <div style={{
+                            backgroundColor: this.props.color,
+                            height: '100%',
+                            width: `${Math.min(100, this.props.progress)}%`,
+                        }} />
+                    </div>
                     <div
                         className={mergeClasses(
                             this._introStyle.header,

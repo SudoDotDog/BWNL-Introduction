@@ -22,7 +22,7 @@ export const IntroStyleBase: JSSStyle = {
         transitionDuration: '0.3s',
         transitionTimingFunction: 'ease-out',
         opacity: 1,
-        pointerEvents: 'none',
+        // pointerEvents: 'none',
     },
     ready: {
         opacity: 0,

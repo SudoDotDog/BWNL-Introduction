@@ -10,6 +10,17 @@ import { IntroStyleBase } from "./intro";
 export const IntroWithProgressStyleBase: JSSStyle = {
 
     ...IntroStyleBase,
+    intro: {
+        display: 'grid',
+        gridTemplateAreas: `
+            "icon header"
+            "icon progress"
+            "icon body"
+        `,
+        gridTemplateRows: `1fr auto 1fr`,
+        gridTemplateColumns: `auto 1fr`,
+        rowGap: '2px',
+    },
     progress: {
         gridArea: 'progress',
         marginTop: '2px',
