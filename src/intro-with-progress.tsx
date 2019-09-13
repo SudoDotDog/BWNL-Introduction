@@ -36,6 +36,10 @@ export class IntroWithProgress extends React.Component<IntroWithProgressProps, I
 
     public componentDidMount() {
 
+        const delay: number = this.props.delay || 100;
+        const duration: number = this.props.duration || 2000;
+        const phase: number = this.props.phase || 300;
+
         setTimeout(() => this.setState({
             playing: true,
         }, () => setTimeout(() => this.setState({
@@ -43,7 +47,7 @@ export class IntroWithProgress extends React.Component<IntroWithProgressProps, I
             ready: true,
         }, () => setTimeout(() => this.setState({
             covering: false,
-        }), 300)), 2000)), 100);
+        }), phase)), duration)), delay);
     }
 
     public render() {

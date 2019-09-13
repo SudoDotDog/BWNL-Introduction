@@ -24,6 +24,10 @@ export type IntroProps = {
     readonly zIndex?: number;
     readonly size?: number;
 
+    readonly delay?: number;
+    readonly duration?: number;
+    readonly phase?: number;
+
     readonly logo: React.ReactElement<IntroLogoComponentProps>;
     readonly header: string;
     readonly body: string;
