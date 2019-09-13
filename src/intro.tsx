@@ -4,6 +4,7 @@
  * @description Intro
  */
 
+import { assertIfTrue, mergeClasses } from "@sudoo/jss";
 import * as React from "react";
 import { IntroLogoComponentProps } from "./declare";
 import { IntroStyle } from "./style/intro";
@@ -22,14 +23,18 @@ export type IntroProps = {
 
 export type IntroStates = {
 
+    readonly playing: boolean;
     readonly ready: boolean;
+    readonly covering: boolean;
 };
 
 export class Intro extends React.Component<IntroProps, IntroStates> {
 
     public readonly state: IntroStates = {
 
+        playing: false,
         ready: false,
+        covering: true,
     };
 
     private readonly _introStyle = IntroStyle.use();
@@ -39,10 +44,21 @@ export class Intro extends React.Component<IntroProps, IntroStates> {
         super(props);
     }
 
+    public componentDidMount() {
+
+        setTimeout(() => this.setState({
+            playing: true,
+        }, () => setTimeout(() => this.setState({
+            playing: false,
+            ready: true,
+        }, () => setTimeout(() => this.setState({
+            covering: false,
+        }), 300)), 2000)), 100);
+    }
+
     public render() {
 
         const size: number = this.props.size || 100;
-        const fontSize: number = Math.floor(size / 3.6);
         const gapSize: number = Math.floor(size / 5);
 
         const logo: React.ReactElement = React.cloneElement(this.props.logo, {
@@ -51,8 +67,11 @@ export class Intro extends React.Component<IntroProps, IntroStates> {
         } as IntroLogoComponentProps);
 
         return (<React.Fragment>
-            <div
-                className={this._introStyle.cover}
+            {this.state.covering && <div
+                className={mergeClasses(
+                    this._introStyle.cover,
+                    assertIfTrue(this.state.ready, this._introStyle.ready),
+                )}
                 style={{
                     zIndex: this.props.zIndex || 30,
                 }}
@@ -76,22 +95,18 @@ export class Intro extends React.Component<IntroProps, IntroStates> {
                     />
                     <div
                         className={this._introStyle.header}
-                        style={{
-                            fontSize: `${fontSize}px`,
-                        }}
+                        style={this._getTextStyle()}
                     >
                         {this.props.header}
                     </div>
                     <div
                         className={this._introStyle.body}
-                        style={{
-                            fontSize: `${fontSize}px`,
-                        }}
+                        style={this._getTextStyle()}
                     >
                         {this.props.body}
                     </div>
                 </div>
-            </div>
+            </div>}
             <div
                 className={this.props.className}
                 style={{
@@ -102,5 +117,25 @@ export class Intro extends React.Component<IntroProps, IntroStates> {
                 {this.props.children}
             </div>
         </React.Fragment>);
+    }
+
+    private _getTextStyle(): React.CSSProperties {
+
+        const size: number = this.props.size || 100;
+        const fontSize: number = Math.floor(size / 3.6);
+        const marginSize: number = Math.floor(size / 2.5);
+
+        if (this.state.playing) {
+            return {
+                fontSize: `${fontSize}px`,
+                opacity: 1,
+            };
+        }
+
+        return {
+            fontSize: `${fontSize}px`,
+            marginLeft: `-${marginSize}px`,
+            opacity: 0,
+        };
     }
 }

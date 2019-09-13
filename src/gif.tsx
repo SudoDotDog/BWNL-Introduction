@@ -16,11 +16,6 @@ export type IntroGifLogoProps = IntroGifLogoPropsBase & IntroLogoComponentProps;
 
 export class IntroGifLogoBase extends React.Component<IntroGifLogoProps> {
 
-    public constructor(props: IntroGifLogoProps) {
-
-        super(props);
-    }
-
     public render() {
 
         return (<img

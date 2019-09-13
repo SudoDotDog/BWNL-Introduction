@@ -18,6 +18,14 @@ const IntroStyleBase: JSSStyle = {
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: 'white',
+        transitionProperty: 'all',
+        transitionDuration: '0.3s',
+        transitionTimingFunction: 'ease-out',
+        opacity: 1,
+        pointerEvents: 'none',
+    },
+    ready: {
+        opacity: 0,
     },
     intro: {
         display: 'grid',
@@ -43,11 +51,19 @@ const IntroStyleBase: JSSStyle = {
         gridArea: 'header',
         alignSelf: 'end',
         lineHeight: '1em',
+        fontWeight: 'bold',
+        transitionProperty: 'all',
+        transitionDuration: '0.5s',
+        transitionTimingFunction: 'ease-out',
     },
     body: {
         gridArea: 'body',
         alignSelf: 'start',
         lineHeight: '1em',
+        fontWeight: 'bold',
+        transitionProperty: 'all',
+        transitionDuration: '0.5s',
+        transitionTimingFunction: 'ease-out',
     },
 };
 
