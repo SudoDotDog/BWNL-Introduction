@@ -5,6 +5,7 @@
  */
 
 import * as React from "react";
+import { IntroLogoComponentProps } from "./declare";
 import { IntroStyle } from "./style/intro";
 
 export type IntroProps = {
@@ -13,7 +14,7 @@ export type IntroProps = {
     readonly style?: React.CSSProperties;
     readonly zIndex?: number;
 
-    readonly logo: string;
+    readonly logo: React.ReactElement<IntroLogoComponentProps>;
     readonly header: string;
     readonly body: string;
 };
@@ -39,6 +40,11 @@ export class Intro extends React.Component<IntroProps, IntroStates> {
 
     public render() {
 
+        const logo: React.ReactElement = React.cloneElement(this.props.logo, {
+            forwarding: false,
+            reversing: false,
+        } as IntroLogoComponentProps);
+
         return (<React.Fragment>
             <div
                 className={this._introStyle.cover}
@@ -48,7 +54,7 @@ export class Intro extends React.Component<IntroProps, IntroStates> {
             >
                 <div className={this._introStyle.intro}>
                     <div className={this._introStyle.icon}>
-
+                        {logo}
                     </div>
                     <div className={this._introStyle.header}>
                         {this.props.header}

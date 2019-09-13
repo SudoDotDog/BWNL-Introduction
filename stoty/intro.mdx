@@ -2,7 +2,7 @@
 name: Intro
 ---
 
-import { Intro } from "../src/index";
+import { Intro, IntroGifLogo } from "../src/index";
 import { Playground } from 'docz'
 
 # Intro
@@ -10,6 +10,7 @@ import { Playground } from 'docz'
 <Playground>
     <Intro
         zIndex={2000}
+        logo={<IntroGifLogo src="https://media0.giphy.com/media/l3vR16pONsV8cKkWk/giphy.gif" />}
         header="Header Header Header"
         body="Body Body Body"
     >
