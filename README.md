@@ -1,2 +1,0 @@
-# BWNL-Introduction
-:tada: Intro 

@@ -1,0 +1,35 @@
+{
+  "name": "@bwnl/introduction",
+  "version": "1.4.2",
+  "description": ":tada: Intro",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SudoDotDog/BWNL-Introduction.git"
+  },
+  "author": "WMXPY",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SudoDotDog/BWNL-Introduction/issues"
+  },
+  "homepage": "https://github.com/SudoDotDog/BWNL-Introduction#readme",
+  "peerDependencies": {
+    "react": "*",
+    "react-dom": "*"
+  },
+  "dependencies": {
+    "@sudoo/jss": "^1.2.1"
+  },
+  "devDependencies": {
+    "@sudoo/io": "^1.6.1",
+    "@sudoo/mock": "^1.2.0",
+    "@sudoo/react-force": "^1.5.0",
+    "@sudoo/react-force-dev": "^1.5.0",
+    "@sudoo/triforce": "^1.8.3",
+    "docz": "^1.2.0",
+    "docz-theme-default": "^1.2.0"
+  }
+}
