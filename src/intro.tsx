@@ -12,6 +12,10 @@ export type IntroProps = {
     readonly className?: string;
     readonly style?: React.CSSProperties;
     readonly zIndex?: number;
+
+    readonly logo: string;
+    readonly header: string;
+    readonly body: string;
 };
 
 export type IntroStates = {
@@ -42,8 +46,16 @@ export class Intro extends React.Component<IntroProps, IntroStates> {
                     zIndex: this.props.zIndex || 30,
                 }}
             >
-                <div>
-                    123
+                <div className={this._introStyle.intro}>
+                    <div className={this._introStyle.icon}>
+
+                    </div>
+                    <div className={this._introStyle.header}>
+                        {this.props.header}
+                    </div>
+                    <div className={this._introStyle.body}>
+                        {this.props.body}
+                    </div>
                 </div>
             </div>
             <div

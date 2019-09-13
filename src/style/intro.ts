@@ -19,6 +19,22 @@ const IntroStyleBase: JSSStyle = {
         alignItems: 'center',
         backgroundColor: 'white',
     },
+    intro: {
+        display: 'grid',
+        gridTemplateAreas: `
+            "icon header"
+            "icon body"
+        `,
+    },
+    icon: {
+        gridArea: 'icon',
+    },
+    header: {
+        gridArea: 'header',
+    },
+    body: {
+        gridArea: 'body',
+    },
 };
 
 export const IntroStyle: StyleManager = StyleManager.create(IntroStyleBase, 'Intro').setPrefix('BWNL-Intro-');
