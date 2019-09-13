@@ -6,7 +6,7 @@
 
 import { JSSStyle, StyleManager } from "@sudoo/jss";
 
-const IntroStyleBase: JSSStyle = {
+const IntroWithProgressStyleBase: JSSStyle = {
 
     cover: {
         position: 'fixed',
@@ -31,15 +31,21 @@ const IntroStyleBase: JSSStyle = {
         display: 'grid',
         gridTemplateAreas: `
             "icon header"
+            "icon progress"
             "icon body"
         `,
-        gridTemplateRows: `1fr 1fr`,
+        gridTemplateRows: `1fr auto 1fr`,
         gridTemplateColumns: `auto 1fr`,
         rowGap: '2px',
     },
     icon: {
         gridArea: 'icon',
         alignSelf: 'center',
+    },
+    progress: {
+        gridArea: 'progress',
+        marginTop: '2px',
+        height: '3px',
     },
     header: {
         gridArea: 'header',
@@ -61,4 +67,4 @@ const IntroStyleBase: JSSStyle = {
     },
 };
 
-export const IntroStyle: StyleManager = StyleManager.create(IntroStyleBase, 'Intro').setPrefix('BWNL-Intro-');
+export const IntroWithProgressStyle: StyleManager = StyleManager.create(IntroWithProgressStyleBase, 'Intro-With-Progress').setPrefix('BWNL-Intro-');

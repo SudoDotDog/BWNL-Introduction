@@ -1,26 +1,46 @@
 /**
  * @author WMXPY
  * @namespace Intro
- * @description Intro
+ * @description Intro With Progress
  */
 
 import { assertIfTrue, mergeClasses } from "@sudoo/jss";
 import * as React from "react";
-import { IntroLogoComponentProps, IntroProps, IntroStates } from "./declare";
-import { IntroStyle } from "./style/intro";
+import { IntroLogoComponentProps } from "./declare";
+import { IntroWithProgressStyle } from "./style/intro-with-progress";
 
-export class Intro extends React.Component<IntroProps, IntroStates> {
+export type IntroWithProgressProps = {
 
-    public readonly state: IntroStates = {
+    readonly className?: string;
+    readonly color?: string;
+    readonly style?: React.CSSProperties;
+    readonly zIndex?: number;
+    readonly size?: number;
+
+    readonly logo: React.ReactElement<IntroLogoComponentProps>;
+    readonly header: string;
+    readonly body: string;
+};
+
+export type IntroWithProgressStates = {
+
+    readonly playing: boolean;
+    readonly ready: boolean;
+    readonly covering: boolean;
+};
+
+export class IntroWithProgress extends React.Component<IntroWithProgressProps, IntroWithProgressStates> {
+
+    public readonly state: IntroWithProgressStates = {
 
         playing: false,
         ready: false,
         covering: true,
     };
 
-    private readonly _introStyle = IntroStyle.use();
+    private readonly _introStyle = IntroWithProgressStyle.use();
 
-    public constructor(props: IntroProps) {
+    public constructor(props: IntroWithProgressProps) {
 
         super(props);
     }
@@ -71,6 +91,9 @@ export class Intro extends React.Component<IntroProps, IntroStates> {
                     >
                         {logo}
                     </div>
+                    <div
+                        className={this._introStyle.progress}
+                    />
                     <div
                         className={this._introStyle.header}
                         style={this._getTextStyle()}

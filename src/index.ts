@@ -11,4 +11,5 @@ Register.register();
 export * from "./declare";
 export * from "./gif";
 export * from "./intro";
+export * from "./intro-with-progress";
 
