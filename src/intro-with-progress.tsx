@@ -78,14 +78,20 @@ export class IntroWithProgress extends React.Component<IntroWithProgressProps, I
                         className={this._introStyle.progress}
                     />
                     <div
-                        className={this._introStyle.header}
-                        style={this._getTextStyle()}
+                        className={mergeClasses(
+                            this._introStyle.header,
+                            this.props.headerClassName,
+                        )}
+                        style={this._getHeaderStyle()}
                     >
                         {this.props.header}
                     </div>
                     <div
-                        className={this._introStyle.body}
-                        style={this._getTextStyle()}
+                        className={mergeClasses(
+                            this._introStyle.body,
+                            this.props.bodyClassName,
+                        )}
+                        style={this._getBodyStyle()}
                     >
                         {this.props.body}
                     </div>
@@ -103,26 +109,47 @@ export class IntroWithProgress extends React.Component<IntroWithProgressProps, I
         </React.Fragment>);
     }
 
-    private _getTextStyle(): React.CSSProperties {
+    private _getHeaderStyle(): React.CSSProperties {
 
         const size: number = this.props.size || 100;
         const fontSize: number = Math.floor(size / 3.6);
         const marginSize: number = Math.floor(size / 2.5);
 
-        const color: string = this.props.color || '000000';
-
         if (this.state.playing) {
             return {
+                ...this.props.headerStyle,
                 fontSize: `${fontSize}px`,
-                color,
                 marginLeft: 0,
                 opacity: 1,
             };
         }
 
         return {
+            ...this.props.headerStyle,
             fontSize: `${fontSize}px`,
-            color,
+            marginLeft: `-${marginSize}px`,
+            opacity: 0,
+        };
+    }
+
+    private _getBodyStyle(): React.CSSProperties {
+
+        const size: number = this.props.size || 100;
+        const fontSize: number = Math.floor(size / 3.6);
+        const marginSize: number = Math.floor(size / 2.5);
+
+        if (this.state.playing) {
+            return {
+                ...this.props.bodyStyle,
+                fontSize: `${fontSize}px`,
+                marginLeft: 0,
+                opacity: 1,
+            };
+        }
+
+        return {
+            ...this.props.bodyStyle,
+            fontSize: `${fontSize}px`,
             marginLeft: `-${marginSize}px`,
             opacity: 0,
         };

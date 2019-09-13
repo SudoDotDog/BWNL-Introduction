@@ -5,65 +5,15 @@
  */
 
 import { JSSStyle, StyleManager } from "@sudoo/jss";
+import { IntroStyleBase } from "./intro";
 
-const IntroWithProgressStyleBase: JSSStyle = {
+export const IntroWithProgressStyleBase: JSSStyle = {
 
-    cover: {
-        position: 'fixed',
-        display: 'flex',
-        height: '100vh',
-        width: '100vw',
-        top: 0,
-        left: 0,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: 'white',
-        transitionProperty: 'all',
-        transitionDuration: '0.3s',
-        transitionTimingFunction: 'ease-out',
-        opacity: 1,
-        pointerEvents: 'none',
-    },
-    ready: {
-        opacity: 0,
-    },
-    intro: {
-        display: 'grid',
-        gridTemplateAreas: `
-            "icon header"
-            "icon progress"
-            "icon body"
-        `,
-        gridTemplateRows: `1fr auto 1fr`,
-        gridTemplateColumns: `auto 1fr`,
-        rowGap: '2px',
-    },
-    icon: {
-        gridArea: 'icon',
-        alignSelf: 'center',
-    },
+    ...IntroStyleBase,
     progress: {
         gridArea: 'progress',
         marginTop: '2px',
         height: '3px',
-    },
-    header: {
-        gridArea: 'header',
-        alignSelf: 'end',
-        lineHeight: '1em',
-        fontWeight: 'bold',
-        transitionProperty: 'all',
-        transitionDuration: '0.5s',
-        transitionTimingFunction: 'ease-out',
-    },
-    body: {
-        gridArea: 'body',
-        alignSelf: 'start',
-        lineHeight: '1em',
-        fontWeight: 'bold',
-        transitionProperty: 'all',
-        transitionDuration: '0.5s',
-        transitionTimingFunction: 'ease-out',
     },
 };
 

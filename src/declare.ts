@@ -13,8 +13,14 @@ export type IntroLogoComponentProps = {
 export type IntroProps = {
 
     readonly className?: string;
-    readonly color?: string;
     readonly style?: React.CSSProperties;
+
+    readonly headerClassName?: string;
+    readonly headerStyle?: React.CSSProperties;
+
+    readonly bodyClassName?: string;
+    readonly bodyStyle?: React.CSSProperties;
+
     readonly zIndex?: number;
     readonly size?: number;
 

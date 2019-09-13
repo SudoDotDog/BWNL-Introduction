@@ -6,7 +6,7 @@
 
 import { JSSStyle, StyleManager } from "@sudoo/jss";
 
-const IntroStyleBase: JSSStyle = {
+export const IntroStyleBase: JSSStyle = {
 
     cover: {
         position: 'fixed',
@@ -45,7 +45,6 @@ const IntroStyleBase: JSSStyle = {
         gridArea: 'header',
         alignSelf: 'end',
         lineHeight: '1em',
-        fontWeight: 'bold',
         transitionProperty: 'all',
         transitionDuration: '0.5s',
         transitionTimingFunction: 'ease-out',
@@ -54,7 +53,6 @@ const IntroStyleBase: JSSStyle = {
         gridArea: 'body',
         alignSelf: 'start',
         lineHeight: '1em',
-        fontWeight: 'bold',
         transitionProperty: 'all',
         transitionDuration: '0.5s',
         transitionTimingFunction: 'ease-out',
