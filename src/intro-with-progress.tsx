@@ -39,10 +39,10 @@ export class IntroWithProgress extends React.Component<IntroWithProgressProps, I
         setTimeout(() => this.setState({
             playing: true,
         }, () => setTimeout(() => this.setState({
-            // playing: false,
-            // ready: true,
+            playing: false,
+            ready: true,
         }, () => setTimeout(() => this.setState({
-            // covering: false,
+            covering: false,
         }), 300)), 2000)), 100);
     }
 
