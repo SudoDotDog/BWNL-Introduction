@@ -9,16 +9,21 @@ import { IntroStyle } from "./style/intro";
 
 export type IntroProps = {
 
+    readonly className?: string;
+    readonly style?: React.CSSProperties;
+    readonly zIndex?: number;
 };
 
 export type IntroStates = {
 
+    readonly ready: boolean;
 };
 
 export class Intro extends React.Component<IntroProps, IntroStates> {
 
     public readonly state: IntroStates = {
 
+        ready: false,
     };
 
     private readonly _introStyle = IntroStyle.use();
@@ -30,9 +35,26 @@ export class Intro extends React.Component<IntroProps, IntroStates> {
 
     public render() {
 
-        return (<div
-        >
-            123
-        </div>);
+        return (<React.Fragment>
+            <div
+                className={this._introStyle.cover}
+                style={{
+                    zIndex: this.props.zIndex || 30,
+                }}
+            >
+                <div>
+                    123
+                </div>
+            </div>
+            <div
+                className={this.props.className}
+                style={{
+                    ...this.props.style,
+                    visibility: this.state.ready ? 'visible' : 'hidden',
+                }}
+            >
+                {this.props.children}
+            </div>
+        </React.Fragment>);
     }
 }
