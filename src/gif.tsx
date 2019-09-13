@@ -18,6 +18,8 @@ export class IntroGifLogoBase extends React.Component<IntroGifLogoProps> {
 
     public render() {
 
+        console.log(this.props);
+
         return (<img
             src={this.props.src}
             style={{

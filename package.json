@@ -1,6 +1,6 @@
 {
   "name": "@bwnl/introduction",
-  "version": "1.4.2",
+  "version": "1.0.0",
   "description": ":tada: Intro",
   "main": "index.js",
   "directories": {

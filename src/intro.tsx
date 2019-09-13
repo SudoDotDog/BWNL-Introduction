@@ -63,8 +63,8 @@ export class Intro extends React.Component<IntroProps, IntroStates> {
         const gapSize: number = Math.floor(size / 5);
 
         const logo: React.ReactElement = React.cloneElement(this.props.logo, {
-            forwarding: false,
-            reversing: false,
+            forwarding: this.state.playing,
+            reversing: this.state.ready,
         } as IntroLogoComponentProps);
 
         return (<React.Fragment>
