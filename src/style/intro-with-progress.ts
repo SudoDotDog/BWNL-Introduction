@@ -25,6 +25,9 @@ export const IntroWithProgressStyleBase: JSSStyle = {
         gridArea: 'progress',
         marginTop: '2px',
         height: '3px',
+        transitionProperty: 'all',
+        transitionDuration: '0.5s',
+        transitionTimingFunction: 'ease-out',
     },
 };
 

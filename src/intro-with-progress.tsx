@@ -13,6 +13,9 @@ export type IntroWithProgressProps = {
 
     readonly progress: number;
     readonly color: string;
+
+    readonly progressStyle?: React.CSSProperties;
+    readonly progressClassName?: string;
 } & IntroProps;
 
 export class IntroWithProgress extends React.Component<IntroWithProgressProps, IntroStates> {
@@ -78,7 +81,11 @@ export class IntroWithProgress extends React.Component<IntroWithProgressProps, I
                         {logo}
                     </div>
                     <div
-                        className={this._introStyle.progress}
+                        className={mergeClasses(
+                            this._introStyle.progress,
+                            this.props.progressClassName,
+                        )}
+                        style={this._getProgressStyle()}
                     >
                         <div style={{
                             backgroundColor: this.props.color,
@@ -116,6 +123,23 @@ export class IntroWithProgress extends React.Component<IntroWithProgressProps, I
                 {this.props.children}
             </div>
         </React.Fragment>);
+    }
+
+    private _getProgressStyle(): React.CSSProperties {
+
+        const size: number = this.props.size || 100;
+
+        if (this.state.playing) {
+            return {
+                ...this.props.progressStyle,
+                opacity: 1,
+            };
+        }
+
+        return {
+            ...this.props.headerStyle,
+            opacity: 0,
+        };
     }
 
     private _getHeaderStyle(): React.CSSProperties {
