@@ -88,9 +88,9 @@ export class Intro extends React.Component<IntroProps, IntroStates> {
             >
                 <div
                     className={this._introStyle.icon}
-                    style={{
+                    style={this._getOpacityStyle({
                         height: `${size}px`,
-                    }}
+                    })}
                 >
                     {logo}
                 </div>
@@ -112,9 +112,32 @@ export class Intro extends React.Component<IntroProps, IntroStates> {
                 >
                     {this.props.body}
                 </div>
+                <div
+                    className={mergeClasses(
+                        this._introStyle.extra,
+                        this.props.extraClassName,
+                    )}
+                    style={this._getOpacityStyle(this.props.extraStyle)}
+                >
+                    {this.props.extra}
+                </div>
             </div>
-            {this.props.extra}
         </div>);
+    }
+
+    private _getOpacityStyle(merge?: React.CSSProperties): React.CSSProperties {
+
+        if (this.state.playing) {
+            return {
+                ...merge,
+                opacity: 1,
+            };
+        }
+
+        return {
+            ...merge,
+            opacity: 0,
+        };
     }
 
     private _getHeaderStyle(): React.CSSProperties {

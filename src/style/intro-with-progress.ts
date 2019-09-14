@@ -16,10 +16,11 @@ export const IntroWithProgressStyleBase: JSSStyle = {
             "icon header"
             "icon progress"
             "icon body"
+            "extra extra"
         `,
         gridTemplateRows: `1fr auto 1fr`,
         gridTemplateColumns: `auto 1fr`,
-        rowGap: '2px',
+        rowGap: '3px',
     },
     progress: {
         gridArea: 'progress',

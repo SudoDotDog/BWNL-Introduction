@@ -32,14 +32,18 @@ export const IntroStyleBase: JSSStyle = {
         gridTemplateAreas: `
             "icon header"
             "icon body"
+            "extra extra"
         `,
         gridTemplateRows: `1fr 1fr`,
         gridTemplateColumns: `auto 1fr`,
-        rowGap: '2px',
+        rowGap: '3px',
     },
     icon: {
         gridArea: 'icon',
         alignSelf: 'center',
+        transitionProperty: 'all',
+        transitionDuration: '0.5s',
+        transitionTimingFunction: 'ease-out',
     },
     header: {
         gridArea: 'header',
@@ -53,6 +57,12 @@ export const IntroStyleBase: JSSStyle = {
         gridArea: 'body',
         alignSelf: 'start',
         lineHeight: '1em',
+        transitionProperty: 'all',
+        transitionDuration: '0.5s',
+        transitionTimingFunction: 'ease-out',
+    },
+    extra: {
+        gridArea: 'extra',
         transitionProperty: 'all',
         transitionDuration: '0.5s',
         transitionTimingFunction: 'ease-out',
