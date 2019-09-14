@@ -113,6 +113,7 @@ export class Intro extends React.Component<IntroProps, IntroStates> {
                     {this.props.body}
                 </div>
             </div>
+            {this.props.extra}
         </div>);
     }
 

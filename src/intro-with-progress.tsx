@@ -135,6 +135,7 @@ export class IntroWithProgress extends React.Component<IntroWithProgressProps, I
                     {this.props.body}
                 </div>
             </div>
+            {this.props.extra}
         </div>);
     }
 
