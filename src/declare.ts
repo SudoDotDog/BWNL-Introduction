@@ -4,6 +4,8 @@
  * @description Declare
  */
 
+import * as React from "react";
+
 export type IntroLogoComponentProps = {
 
     readonly forwarding: boolean;
@@ -20,6 +22,8 @@ export type IntroProps = {
 
     readonly bodyClassName?: string;
     readonly bodyStyle?: React.CSSProperties;
+
+    readonly extra?: React.ReactNode;
 
     readonly zIndex?: number;
     readonly size?: number;
