@@ -135,12 +135,11 @@ export class IntroWithProgress extends React.Component<IntroWithProgressProps, I
                     {this.props.body}
                 </div>
             </div>
+            {this.props.extra}
         </div>);
     }
 
     private _getProgressStyle(): React.CSSProperties {
-
-        const size: number = this.props.size || 100;
 
         if (this.state.playing) {
             return {
