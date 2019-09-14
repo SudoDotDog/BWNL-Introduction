@@ -97,9 +97,9 @@ export class IntroWithProgress extends React.Component<IntroWithProgressProps, I
             >
                 <div
                     className={this._introStyle.icon}
-                    style={{
+                    style={this._getOpacityStyle({
                         height: `${size}px`,
-                    }}
+                    })}
                 >
                     {logo}
                 </div>
@@ -108,7 +108,7 @@ export class IntroWithProgress extends React.Component<IntroWithProgressProps, I
                         this._introStyle.progress,
                         this.props.progressClassName,
                     )}
-                    style={this._getProgressStyle()}
+                    style={this._getOpacityStyle(this.props.progressStyle)}
                 >
                     <div style={{
                         backgroundColor: this.props.color,
@@ -134,22 +134,30 @@ export class IntroWithProgress extends React.Component<IntroWithProgressProps, I
                 >
                     {this.props.body}
                 </div>
+                <div
+                    className={mergeClasses(
+                        this._introStyle.extra,
+                        this.props.extraClassName,
+                    )}
+                    style={this._getOpacityStyle(this.props.extraStyle)}
+                >
+                    {this.props.extra}
+                </div>
             </div>
-            {this.props.extra}
         </div>);
     }
 
-    private _getProgressStyle(): React.CSSProperties {
+    private _getOpacityStyle(merge?: React.CSSProperties): React.CSSProperties {
 
         if (this.state.playing) {
             return {
-                ...this.props.progressStyle,
+                ...merge,
                 opacity: 1,
             };
         }
 
         return {
-            ...this.props.headerStyle,
+            ...merge,
             opacity: 0,
         };
     }
