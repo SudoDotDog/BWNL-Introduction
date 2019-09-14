@@ -141,8 +141,6 @@ export class IntroWithProgress extends React.Component<IntroWithProgressProps, I
 
     private _getProgressStyle(): React.CSSProperties {
 
-        const size: number = this.props.size || 100;
-
         if (this.state.playing) {
             return {
                 ...this.props.progressStyle,
