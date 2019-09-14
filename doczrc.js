@@ -1,6 +1,6 @@
 /**
  * @author WMXPY
- * @namespace Loading
+ * @namespace Introduction
  * @description DOCZ_RC
  */
 
