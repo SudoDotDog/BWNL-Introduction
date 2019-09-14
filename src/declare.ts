@@ -32,9 +32,9 @@ export type IntroProps = {
     readonly duration?: number;
     readonly phase?: number;
 
-    readonly logo: React.ReactElement<IntroLogoComponentProps>;
     readonly header: string;
     readonly body: string;
+    readonly logo: React.ReactElement<IntroLogoComponentProps>;
 };
 
 export type IntroStates = {
