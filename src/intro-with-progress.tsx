@@ -18,6 +18,7 @@ export type IntroWithProgressProps = {
     readonly progressClassName?: string;
 } & IntroProps;
 
+// tslint:disable: no-magic-numbers
 export class IntroWithProgress extends React.Component<IntroWithProgressProps, IntroStates> {
 
     public readonly state: IntroStates = {
@@ -208,3 +209,4 @@ export class IntroWithProgress extends React.Component<IntroWithProgressProps, I
         };
     }
 }
+// tslint:enable: no-magic-numbers

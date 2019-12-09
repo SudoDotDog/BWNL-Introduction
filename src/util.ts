@@ -4,6 +4,7 @@
  * @description Util
  */
 
+// tslint:disable: no-magic-numbers
 export const hexToRGB = (hex: string, alpha?: number): string => {
 
     const parsed: string = hex.length === 7 ? hex.slice(1, 7) : hex;
@@ -22,3 +23,4 @@ export const hexToRGB = (hex: string, alpha?: number): string => {
         return `rgba(${r}, ${g}, ${b}, 1)`;
     }
 };
+// tslint:enable: no-magic-numbers
