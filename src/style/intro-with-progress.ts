@@ -4,10 +4,10 @@
  * @description Intro
  */
 
-import { JSSStyle, StyleManager } from "@sudoo/jss";
+import { StyleManager, Styles } from "@sudoo/jss";
 import { IntroStyleBase } from "./intro";
 
-export const IntroWithProgressStyleBase: JSSStyle = {
+export const IntroWithProgressStyleBase: Styles = {
 
     ...IntroStyleBase,
     intro: {

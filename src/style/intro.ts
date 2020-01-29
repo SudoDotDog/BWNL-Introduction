@@ -4,9 +4,9 @@
  * @description Intro
  */
 
-import { JSSStyle, StyleManager } from "@sudoo/jss";
+import { StyleManager, Styles } from "@sudoo/jss";
 
-export const IntroStyleBase: JSSStyle = {
+export const IntroStyleBase: Styles = {
 
     cover: {
         position: 'fixed',
