@@ -6,7 +6,7 @@
 
 import { assertIfTrue, mergeClasses } from "@sudoo/jss";
 import * as React from "react";
-import { DEFAULT_DELAY, DEFAULT_DURATION, DEFAULT_PHASE } from "./constraint";
+import { DEFAULT_DELAY, DEFAULT_DURATION, DEFAULT_PHASE, DEFAULT_Z_INDEX } from "./constraint";
 import { IntroLogoComponentProps, IntroProps, IntroStates } from "./declare";
 import { IntroStyle } from "./style/intro";
 
