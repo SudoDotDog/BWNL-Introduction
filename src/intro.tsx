@@ -78,7 +78,7 @@ export class Intro extends React.Component<IntroProps, IntroStates> {
                 assertIfTrue(this.state.ready, this._introStyle.ready),
             )}
             style={{
-                zIndex: this.props.zIndex || 30,
+                zIndex: this.props.zIndex || DEFAULT_Z_INDEX,
             }}
         >
             <div
@@ -144,7 +144,9 @@ export class Intro extends React.Component<IntroProps, IntroStates> {
     private _getHeaderStyle(): React.CSSProperties {
 
         const size: number = this.props.size || 100;
+        // tslint:disable-next-line: no-magic-numbers
         const fontSize: number = Math.floor(size / 3.6);
+        // tslint:disable-next-line: no-magic-numbers
         const marginSize: number = Math.floor(size / 2.5);
 
         if (this.state.playing) {
@@ -167,7 +169,9 @@ export class Intro extends React.Component<IntroProps, IntroStates> {
     private _getBodyStyle(): React.CSSProperties {
 
         const size: number = this.props.size || 100;
+        // tslint:disable-next-line: no-magic-numbers
         const fontSize: number = Math.floor(size / 3.6);
+        // tslint:disable-next-line: no-magic-numbers
         const marginSize: number = Math.floor(size / 2.5);
 
         if (this.state.playing) {
