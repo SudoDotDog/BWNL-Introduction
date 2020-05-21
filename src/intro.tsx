@@ -6,6 +6,7 @@
 
 import { assertIfTrue, mergeClasses } from "@sudoo/jss";
 import * as React from "react";
+import { DEFAULT_DELAY, DEFAULT_DURATION, DEFAULT_PHASE } from "./constraint";
 import { IntroLogoComponentProps, IntroProps, IntroStates } from "./declare";
 import { IntroStyle } from "./style/intro";
 
@@ -27,9 +28,9 @@ export class Intro extends React.Component<IntroProps, IntroStates> {
 
     public componentDidMount() {
 
-        const delay: number = this.props.delay || 100;
-        const duration: number = this.props.duration || 2000;
-        const phase: number = this.props.phase || 300;
+        const delay: number = this.props.delay || DEFAULT_DELAY;
+        const duration: number = this.props.duration || DEFAULT_DURATION;
+        const phase: number = this.props.phase || DEFAULT_PHASE;
 
         setTimeout(() => this.setState({
             playing: true,
