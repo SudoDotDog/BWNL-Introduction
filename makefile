@@ -18,7 +18,7 @@ run:
 
 story:
 	@echo "[INFO] Building Storybook Page"
-	@NODE_ENV=development $(build-storybook)
+	@NODE_ENV=production $(build-storybook)
 
 build:
 	@echo "[INFO] Building for release"
