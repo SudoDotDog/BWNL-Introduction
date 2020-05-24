@@ -13,7 +13,7 @@ install:
 
 before_script:
   - make build
-  - make docz
+  - make story
 
 script:
   - nyc mocha
