@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-magic-numbers */
 /**
  * @author WMXPY
  * @namespace Intro
@@ -18,7 +19,6 @@ export type IntroWithProgressProps = {
     readonly progressClassName?: string;
 } & IntroProps;
 
-// tslint:disable: no-magic-numbers
 export class IntroWithProgress extends React.Component<IntroWithProgressProps, IntroStates> {
 
     public readonly state: IntroStates = {

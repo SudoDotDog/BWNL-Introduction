@@ -8,12 +8,11 @@
 import * as React from 'react';
 import { IntroGifLogo, IntroWithProgress } from "../src";
 
-// tslint:disable-next-line: no-default-export
 export default {
     title: 'Intro With Progress Bar',
 };
 
-export const IntroWithProgressBar = () => {
+export const IntroWithProgressBar = (): React.ReactNode => {
 
     return (<IntroWithProgress
         zIndex={2000}

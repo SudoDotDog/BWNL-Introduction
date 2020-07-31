@@ -8,12 +8,11 @@
 import * as React from 'react';
 import { Intro, IntroGifLogo } from "../src";
 
-// tslint:disable-next-line: no-default-export
 export default {
     title: 'Intro',
 };
 
-export const Introduction = () => {
+export const Introduction = (): React.ReactNode => {
 
     return (<Intro
         zIndex={2000}
