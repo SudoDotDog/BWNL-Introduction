@@ -6,3 +6,11 @@
 [![downloads](https://img.shields.io/npm/dm/@bwnl/introduction.svg)](https://www.npmjs.com/package/@bwnl/introduction)
 
 :tada: Intro 
+
+## Install
+
+```sh
+yarn add @bwnl/introduction
+# Or
+npm install @bwnl/introduction --save
+```
