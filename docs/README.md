@@ -14,3 +14,7 @@ yarn add @bwnl/introduction
 # Or
 npm install @bwnl/introduction --save
 ```
+
+## Usage
+
+For examples, visit `stories` directory within the repository.
