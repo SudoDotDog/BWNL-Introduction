@@ -22,7 +22,7 @@
   "devDependencies": {
     "@babel/core": "^7.11.0",
     "@storybook/addon-actions": "^6.1.0",
-    "@storybook/addon-info": "^5.3.19",
+    "@storybook/addon-info": "^5.3.21",
     "@storybook/addon-knobs": "^6.1.1",
     "@storybook/react": "^6.1.1",
     "@sudoo/io": "^1.8.0",
