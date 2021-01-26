@@ -30,7 +30,7 @@
     "@sudoo/react-force": "^1.7.3",
     "@sudoo/react-force-dev": "^1.7.3",
     "@sudoo/triforce": "^2.7.10",
-    "babel-loader": "^8.1.0",
+    "babel-loader": "^8.2.2",
     "react-docgen-typescript-loader": "^3.7.2",
     "ts-loader": "^8.0.10",
     "ts-node": "^9.0.0",
