@@ -20,7 +20,7 @@
     "@sudoo/jss": "^1.7.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.14.0",
+    "@babel/core": "^7.14.2",
     "@storybook/addon-actions": "^6.2.9",
     "@storybook/addon-info": "^5.3.21",
     "@storybook/addon-knobs": "^6.2.9",
@@ -29,10 +29,10 @@
     "@sudoo/mock": "^1.5.0",
     "@sudoo/react-force": "^1.8.0",
     "@sudoo/react-force-dev": "^1.8.0",
-    "@sudoo/triforce": "^2.9.23",
+    "@sudoo/triforce": "^2.9.24",
     "babel-loader": "^8.2.2",
     "react-docgen-typescript-loader": "^3.7.2",
-    "ts-loader": "^9.1.1",
+    "ts-loader": "^9.1.2",
     "ts-node": "^9.1.1",
     "typescript": "^4.2.4"
   },
